@@ -10,17 +10,17 @@ class UserSeeder extends Seeder
     private $users = [
         [
             'name' => 'Anggit',
-            'email' => 'anggit@employee.icp',
+            'email' => 'anggit@user.icp',
             'password' => 'password',
         ],
         [
             'name' => 'Tri',
-            'email' => 'tri@employee.icp',
+            'email' => 'tri@user.icp',
             'password' => 'password',
         ],
         [
             'name' => 'Banu',
-            'email' => 'banu@employee.icp',
+            'email' => 'banu@user.icp',
             'password' => 'password',
         ],
     ];
