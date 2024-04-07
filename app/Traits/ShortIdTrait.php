@@ -2,6 +2,7 @@
 
 namespace App\Traits;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 trait ShortIdTrait
@@ -20,7 +21,7 @@ trait ShortIdTrait
         static::creating(function ($model) {
             $model->id = self::generateShortId();
             $model->keyType = 'string';
-            if (property_exists($model, 'created_by') && auth()->check())
+            if (Schema::hasColumn($model->getTable(), 'created_by') && auth()->check())
                 $model->created_by = auth()->id();
         });
     }

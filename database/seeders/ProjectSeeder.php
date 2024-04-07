@@ -13,7 +13,11 @@ class ProjectSeeder extends Seeder
         [
             'name' => 'ECare Phase 2',
             'description' => 'ECare Phase 2'
-        ]
+        ],
+        [
+            'name' => 'ECare Phase 3',
+            'description' => 'ECare Phase 3'
+        ],
     ];
     /**
      * Run the database seeds.
