@@ -17,4 +17,14 @@ class Project extends Model
         'description',
         'created_by',
     ];
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function createdBy()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }
