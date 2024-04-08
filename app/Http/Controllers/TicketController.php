@@ -36,7 +36,7 @@ class TicketController extends Controller
         $request->validate([
             'title' => 'required',
             'type' => 'required|in:bug,task',
-            'description' => 'required',
+            'description' => '',
             'label' => 'required|in:To Do,Doing',
             'project_id' => 'required|exists:projects,id',
             'assigned_to' => 'exists:users,id',
@@ -88,7 +88,7 @@ class TicketController extends Controller
         $request->validate([
             'title' => 'required',
             'type' => 'required|in:bug,task',
-            'description' => 'required',
+            'description' => '',
             'label' => 'required|in:To Do,Doing',
             'project_id' => 'required|exists:projects,id',
             'assigned_to' => 'exists:users,id',

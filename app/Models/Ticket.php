@@ -12,21 +12,16 @@ class Ticket extends Model
 
     public $incrementing = false;
 
-    const TYPES = [
-        'task' => 'task',
-        'bug' => 'bug',
-    ];
+    const TYPES = ['task', 'bug'];
 
-    const LABELS = [
-        'To Do' => 'To Do',
-        'Doing' => 'Doing',
-    ];
+    const LABELS = ['To Do', 'Doing'];
 
     protected $fillable = [
         'title',
         'type',
         'description',
         'label',
+        'priority',
         'project_id',
         'created_by',
     ];

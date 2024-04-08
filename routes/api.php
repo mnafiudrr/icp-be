@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ReferenceDataController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\TicketSortController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -40,6 +41,11 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/{id}/assign', [TicketController::class, 'assignUser']);
         Route::delete('/{id}/unassign', [TicketController::class, 'unassignUser']);
         Route::delete('/{id}', [TicketController::class, 'destroy']);
+    });
+
+    Route::prefix('ticket-sort')->group(function () {
+        Route::get('', [TicketSortController::class, 'list']);
+        Route::post('', [TicketSortController::class, 'updateSort']);
     });
 
     Route::get('reference-data', [ReferenceDataController::class, 'index']);
