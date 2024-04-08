@@ -23,7 +23,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('tickets', function (Blueprint $table) {
-            $table->string('assigned_to', 6);
+            $table->string('assigned_to', 6)->nullable();
             $table->foreign('assigned_to')->references('id')->on('users')->onDelete('cascade');
         });
     }

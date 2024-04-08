@@ -18,7 +18,7 @@ class Project extends Model
         'created_by',
     ];
 
-    public function ticket()
+    public function tickets()
     {
         return $this->hasMany(Ticket::class);
     }
