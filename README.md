@@ -18,12 +18,13 @@ To get started, the following steps needs to be taken:
 + `cp .env.example .env` to use env config file
 + Edit file `.env` to match your database (For now, it is recommended to use MySQL for the database. [see issue.](https://github.com/mnafiudrr/icp-be/issues/2))
 + Run `composer install` to install composer.
-+ Run `php artisan migrate` to migrate all database (may need using `--seed` to seed first data
++ Run `php artisan migrate` to migrate all database (may need using `--seed` to seed first data)
 + Run `php artisan serve` to run the application on your device.
 + Application will run on your localhost.
 
 # API Collection
-See all collection on [postman](https://www.postman.com/restless-zodiac-64588/workspace/ticketing/collection/14455202-d2c30265-171f-448b-9351-1dbff2792c8b?action=share&creator=14455202)
+- See all collection on [postman](https://www.postman.com/restless-zodiac-64588/workspace/ticketing/collection/14455202-d2c30265-171f-448b-9351-1dbff2792c8b?action=share&creator=14455202)
+- For example/online testing, you can access http://103.163.161.18:8765/ 
 
 # Features
 ## Authentication
@@ -33,5 +34,4 @@ See https://github.com/mnafiudrr/icp-be/pull/4#issue-2230008259 and https://gith
 ## Ticket Priority
 - API for using drag n drop to change Label from `To Do` to `Doing`, or the other way around
 - Drag n drop to sort up and down
-
-See https://github.com/mnafiudrr/icp-be/pull/6#issue-2230512171
+- For details, see https://github.com/mnafiudrr/icp-be/pull/6#issue-2230512171
