@@ -19,7 +19,7 @@ class ProjectController extends Controller
         }
 
         $data = $projects->map(function ($project) {
-            return $this->projectResource($project);
+            return $this->projectResource($project, false);
         });
 
         return response()->json([
@@ -110,10 +110,24 @@ class ProjectController extends Controller
         ], 200);
     }
 
-    private function projectResource($project)
+    private function projectResource($project, $withTickets = true)
     {
-        return array_merge($project->toArray(), [
+        $data = array_merge($project->toArray(), [
             'created_by' => $project->createdBy->only(['id', 'name']),
+        ]);
+
+        if ($withTickets)
+            $data['tickets'] = $project->tickets->map(function ($ticket) {
+                return $this->ticketResource($ticket);
+            });
+        
+        return $data;
+    }
+
+    private function ticketResource($ticket)
+    {
+        return array_merge($ticket->toArray(), [
+            'created_by' => $ticket->createdBy->only(['id', 'name']),
         ]);
     }
 }
