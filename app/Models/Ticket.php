@@ -32,7 +32,10 @@ class Ticket extends Model
         self::generateId();
         self::creating(function ($model) {
             $biggestPriority = Ticket::where('label', $model->label)->orderBy('priority', 'desc')->first();
-            $model->priority = $biggestPriority->priority + 1;
+            if ($biggestPriority == null)
+                $model->priority = 0;
+            else
+                $model->priority = $biggestPriority->priority + 1;
         });
     }
 
