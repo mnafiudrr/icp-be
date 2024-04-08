@@ -13,10 +13,10 @@ class ReferenceDataController extends Controller
     {
         switch ($request->type) {
             case 'project':
-                $data = Project::pluck('name', 'id');
+                $data = Project::select('id', 'name')->get();
                 break;
             case 'user':
-                $data = User::pluck('name', 'id');
+                $data = User::select('id', 'name')->get();
                 break;
             case 'ticket-label':
                 $data = Ticket::LABELS;
