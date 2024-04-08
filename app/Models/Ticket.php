@@ -26,6 +26,16 @@ class Ticket extends Model
         'created_by',
     ];
 
+    public static function boot()
+    {
+        parent::boot();
+        self::generateId();
+        self::creating(function ($model) {
+            $biggestPriority = Ticket::where('label', $model->label)->orderBy('priority', 'desc')->first();
+            $model->priority = $biggestPriority->priority + 1;
+        });
+    }
+
     public function project()
     {
         return $this->belongsTo(Project::class);
