@@ -24,7 +24,7 @@ To get started, the following steps needs to be taken:
 
 # API Collection
 - See all collection on [postman](https://www.postman.com/restless-zodiac-64588/workspace/ticketing/collection/14455202-d2c30265-171f-448b-9351-1dbff2792c8b?action=share&creator=14455202)
-- For example/online testing, you can access http://103.163.161.18:8765/ 
+- For example/online testing, you can access http://103.163.161.18:8765/ (edit collections variable `url` in postman to `http://103.163.161.18:8765/api`)
 
 # Features
 ## Authentication
