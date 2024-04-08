@@ -35,3 +35,6 @@ See https://github.com/mnafiudrr/icp-be/pull/4#issue-2230008259 and https://gith
 - API for using drag n drop to change Label from `To Do` to `Doing`, or the other way around
 - Drag n drop to sort up and down
 - For details, see https://github.com/mnafiudrr/icp-be/pull/6#issue-2230512171
+
+# Application Design (FrontEnd)
+Currently, I am tryin on designing the application using VueJS to implement this API. Check the [following repository](https://github.com/mnafiudrr/icp-fe).
