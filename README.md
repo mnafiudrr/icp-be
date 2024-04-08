@@ -1,66 +1,37 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Installation
+## Using Docker
+To get started, the following steps needs to be taken:
++ Clone the repo.
++ `cd icp-be` to the project directory.
++ `cp .env.example .env` to use env config file
++ Run `docker run --rm --interactive --tty -v $(pwd):/app composer install` to install composer using docker
++ Run `docker-compose up -d` to start the containers.
++ Application will run on http://localhost:8000.
++ Run `docker exec -it icp-be-ticketing-1 /bin/sh` to access application file in docker
++ Run `php artisan migrate` to migrate all database (may need using `--seed` to seed first data
++ Now application ready to use
 
-## About Laravel
+## Not Using Docker
++ Clone the repo.
++ `cd icp-be` to the project directory.
++ `cp .env.example .env` to use env config file
++ Edit file `.env` to match your database (For now, it is recommended to use MySQL for the database. [see issue.](https://github.com/mnafiudrr/icp-be/issues/2))
++ Run `composer install` to install composer.
++ Run `php artisan migrate` to migrate all database (may need using `--seed` to seed first data
++ Run `php artisan serve` to run the application on your device.
++ Application will run on your localhost.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# API Collection
+See all collection on [postman](https://www.postman.com/restless-zodiac-64588/workspace/ticketing/collection/14455202-d2c30265-171f-448b-9351-1dbff2792c8b?action=share&creator=14455202)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Features
+## Authentication
+User need register to access the application, (https://github.com/mnafiudrr/icp-be/pull/3#issue-2229973198)
+## Manage Ticket and Project
+See https://github.com/mnafiudrr/icp-be/pull/4#issue-2230008259 and https://github.com/mnafiudrr/icp-be/pull/5#issue-2230154019
+## Ticket Priority
+- API for using drag n drop to change Label from `To Do` to `Doing`, or the other way around
+- Drag n drop to sort up and down
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+See https://github.com/mnafiudrr/icp-be/pull/6#issue-2230512171
