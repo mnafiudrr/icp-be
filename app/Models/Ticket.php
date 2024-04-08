@@ -66,6 +66,9 @@ class Ticket extends Model
             $query->whereHas('assignedTo', function ($q) use ($params) {
                 $q->where('user_id', $params['assigned_to']);
             });
+        
+        if (isset($params['title']))
+            $query->where('title', 'like', '%' . $params['title'] . '%');
 
         return $query->get();
     }
